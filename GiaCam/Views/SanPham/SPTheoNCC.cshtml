@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "SPTheoNCC";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/StyleDoAn.css">
+<h2 style="text-align: center; text-decoration: underline #ffd800">Danh sách sản phẩm</h2>
+<div class="col-md-2" style="padding-left:30px">
+    @Html.Action("LoaiSP", "SanPham")
+    @Html.Action("NhaCungCap", "SanPham")
+</div>
+
+<div class="row" style="padding: 5px 5px">
+    <div class="col-lg-9" style="float:left; padding-left:150px">
+        @foreach (var sp in Model)
+        {
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-left" style="padding-bottom: 5px; padding-top:10px">
+                <div class="panel panel-heading">
+                    <strong style="font-size:16pt">@sp.TenSP</strong>
+                </div>
+                <div class="panel panel-body">
+                    <p><strong>Giá: </strong>@sp.GiaSP VND</p>
+                    <p><strong>Số lượng: </strong>@sp.TonKho</p>
+                    <p><strong>Hạn sử dụng: </strong>@sp.HanSuDung.Day/@sp.HanSuDung.Month/@sp.HanSuDung.Year</p>
+                    <img src="~/Content/Hinh_web/@sp.AnhSP" alt="Thumnail" style="max-width: 100%; height: 200px; padding-top:10px" class="center-block" />
+                </div>
+                <div class="panel-footer clearfix">
+                    <div class="pull-left" style="padding-top: 10px">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    </div>
+                    <div class="pull-right">
+                        @Html.ActionLink("Chi Tiết", "Detail", new { id = sp.MaSP }, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+

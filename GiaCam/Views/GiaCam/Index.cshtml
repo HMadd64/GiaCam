@@ -1,0 +1,57 @@
+﻿@model IEnumerable<GiaCam.Models.SanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/StyleDoAn.css">
+<div id="header" style="border-top: 2px #000 solid;">
+    <div id="container" style="display: flex">
+        <!--Banner-->
+        <div id="row">
+            <div id="col-2">
+                <h1>Tất cả là cho trải nghiệm của bạn!<br>Mua gia cầm thời đại 4.0</h1>
+                <p><strong>
+                    Tất cả những gì bạn cần làm là sử dụng điện thoại và đặt hàng.
+                    <br>Được phục vụ các bạn là vinh dự của chúng tôi !
+                    </strong>  
+                </p>
+            </div>
+            <div id="col-2">
+                <img src="~/Content/Hinh_web/GiaCam.jpg" />
+            </div>
+        </div><!--Het banner-->
+    </div>
+</div>
+
+<h2 style="text-align: center; text-decoration: underline #ffd800">Sản phẩm nổi bật</h2>
+<div class="row" style="padding: 5px 5px">
+    @foreach (var sp in Model)
+    {
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="panel panel-heading">
+                <strong>@sp.TenSP</strong>
+            </div>
+            <div class="panel panel-body">
+                <p><strong>Giá: </strong>@sp.GiaSP VND</p>
+                <p><strong>Số lượng: </strong>@sp.TonKho</p>
+                <p><strong>Hạn sử dụng: </strong>@sp.HanSuDung.Day/@sp.HanSuDung.Month/@sp.HanSuDung.Year</p>
+                <img src="~/Content/Hinh_web/@sp.AnhSP" alt="Thumnail" style="max-width: 100%; height: 200px" class="center-block" />
+            </div>
+            <div class="panel-footer clearfix">
+                <div class="pull-left" style="padding-top: 10px">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+                <div class="pull-right">
+                    @Html.ActionLink("Chi Tiết", "Detail", "SanPham", new { id = sp.MaSP }, new { @class = "btn btn-default" })
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+

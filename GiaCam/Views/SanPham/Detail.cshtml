@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/StyleDoAn.css">
+<h2 style="text-align:center; padding-bottom:5px; font-weight:bold; text-decoration:underline #ffd800">Chi tiết sản phẩm</h2>
+<div class="row" style="padding-left: 400px; padding-bottom:50px; padding-top:20px">
+    <div style="width:40%; float:left; border-left:dotted 1px; border-color: azure">
+        <img src="~/Content/Hinh_web/@Model.AnhSP" alt="Thumbnail" width="90%" height="330px" />
+    </div>
+    <div style="width:60%; padding: 10px">
+        <h4 style="font-weight:bold; color:red">Tên sản phẩm: @Model.TenSP</h4>
+        @if (@Model.MaLoai == 1)
+        {
+            <p><strong>Loại sản phẩm: </strong>Đông lạnh</p>
+        }
+        else
+        {
+            <p><strong>Loại sản phẩm: </strong>Tươi sống</p>
+        }
+        @if (@Model.MaNCC == 1)
+        {
+            <p><strong>Nhà cung cấp: </strong>Công Ty TNHH DinoGoose</p>
+        }
+        else
+        {
+            <p><strong>Nhà cung cấp: </strong>Công Ty Cổ Phần Hoa Sen</p>
+        }
+        <p style="text-align:justify"><strong>Mô tả: </strong>@Model.MoTa</p>
+        <p><strong>Số lượng: </strong>@Model.TonKho</p>
+        <p><strong>Ngày nhập hàng: </strong>@Model.NgayNhap.Day/@Model.NgayNhap.Month/@Model.NgayNhap.Year</p>
+        <p><strong>Hạn sử dụng: </strong>@Model.HanSuDung.Day/@Model.HanSuDung.Month/@Model.HanSuDung.Year</p>
+        <p style="font-weight:bold">Giá bán: <span style="color:red; font-size:16pt"> @Model.GiaSP VND</span></p>
+        <p>
+            <a href="@Url.Action("ThemGioHang", "GioHang", new {@maSP = @Model.MaSP, @url = Request.Url.ToString()})" class=" btn btn-primary" role="button">Buy</a>
+            @Html.ActionLink("Back", "Index", "", new { @class = "btn btn-info" })
+        </p>
+    </div>
+</div>
+
+

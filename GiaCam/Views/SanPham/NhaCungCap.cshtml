@@ -1,0 +1,12 @@
+﻿@model IEnumerable<GiaCam.Models.NhaCungCap>
+
+<p class="lead">Nhà cung cấp</p>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("SPTheoNCC", "SanPham", new {id = item.MaNCC})" class="list-group-item">
+            @item.TenNCC
+        </a>
+
+    }
+</div>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>
+        Buôn bán gia cầm
+    </title>
+    <link rel="stylesheet" type="text/css" href="~/Content/StyleDoAn.css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+    <div id="header">
+        <div id="container">
+            <!--Navbar-->
+            <div id="navbar">
+                <div id="logo">
+                    <img src="~/Content/Hinh_web/LogoConDit.png" width="125px" />
+                </div>
+                <h4>DinoGoose</h4>
+                <nav>
+                    <ul id="MenuItems" style="font-size: 16px;padding-top: 2px">
+                        <li>@Html.ActionLink("Trang chủ", "Index", "GiaCam")</li>
+                        <li>@Html.ActionLink("Sản phẩm", "Index", "SanPham")</li>
+                        <li>@Html.ActionLink("Tài Khoản", "DangNhap", "TaiKhoan")</li>
+                        <li>@Html.ActionLink("Liên Hệ", "LienHe", "GiaCam")</li>
+                        <li>@Html.ActionLink("Góp Ý", "GopY", "GopY")</li>
+                        <li>@Html.Action("GioHangPartial", "GioHang")</li>
+                    </ul>
+                </nav>  
+            </div><!--Het navbar-->
+        </div>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <!--Footer-->
+    <div id="footer">
+        <p>Bản quyền thuộc về: <b>Cửa hàng Buôn bán gia cầm DinoGoose</b></p>
+        <p>Mẫu website được thiết kế và phát triển bởi <b><a href="http://www.thayphet.net">Webdesigner</a></b></p>
+    </div><!--Het footer-->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
