@@ -151,7 +151,13 @@
     <Content Include="Content\Hinh_web\GioHang.jpg" />
     <Content Include="Content\Hinh_web\GopY.jpg" />
     <Content Include="Content\Hinh_web\LogoConDit.png" />
+    <Content Include="Content\Hinh_web\manage.jpg" />
+    <Content Include="Content\Hinh_web\matKhau.jpg" />
+    <Content Include="Content\Hinh_web\memeCho.jpg" />
+    <Content Include="Content\Hinh_web\memeConMeo.jpg" />
     <Content Include="Content\Hinh_web\register.jpg" />
+    <Content Include="Content\Hinh_web\TimKiem.jpg" />
+    <Content Include="Content\Hinh_web\timMatKhau.jpg" />
     <Content Include="Content\Hinh_web\TrungGa.jpg" />
     <Content Include="Content\Hinh_web\TrungGaNhat.jpg" />
     <Content Include="Content\Hinh_web\TrungVit.jpg" />
@@ -213,6 +219,13 @@
     <Content Include="Views\GopY\GopY.cshtml" />
     <Content Include="Views\GioHang\GioHang.cshtml" />
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\SanPham\SanPhamDaTim.cshtml" />
+    <Content Include="Views\SanPham\TimSP.cshtml" />
+    <Content Include="Views\GioHang\DatHang.cshtml" />
+    <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
+    <Content Include="Views\TaiKhoan\QuenMatKhau.cshtml" />
+    <Content Include="Views\TaiKhoan\ManageTaiKhoan.cshtml" />
+    <Content Include="Views\TaiKhoan\DoiMatKhau.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

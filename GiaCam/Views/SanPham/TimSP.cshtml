@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/StyleDoAn.css">
+<div class="row" style="padding-bottom:10px">
+    <h4 style="color:red; text-align:center">@ViewBag.ThongBao</h4>
+    <h3 style="text-align:center; font-weight:bold ;text-decoration:underline #ffd800">Tìm Sản Phẩm</h3>
+    <div class="col-lg-6" style="padding-left: 20px; padding-top: 20px">
+        <table align="center" class="pull-right">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+            <tr style="height:150px;">
+                <td style="text-align:right">Tên sản phẩm: </td>
+                <td>
+                    @Html.TextBox("tenSP")
+                    @ViewData["Loi1"]
+                </td>
+                <td> <input type="submit" value="Tìm Kiếm" /></td>
+            </tr>
+            }
+        </table>
+    </div>
+    <div class="col-lg-3 ">
+        <img src="~/Content/Hinh_web/TimKiem.jpg" alt="Thumbnail" class="pull-left" style="height:180px" />
+    </div>
+</div>
+

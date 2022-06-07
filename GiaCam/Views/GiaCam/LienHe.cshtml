@@ -3,26 +3,63 @@
     ViewBag.Title = "LienHe";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
-<link rel="stylesheet" type="text/css" href="~/Content/StyleDoAn.css">
-<h3 style="padding-left:5px; font-weight:bold">Hệ thống Cửa hàng DinoGoose</h3>
-<div class="row" style="padding-bottom:10px">
-    <div class="col-lg-4" style="padding-left:20px">
-        <address style="padding-left:10px">
 
-            <p>Đoàn Trung Hiếu          085277556x</p>
-            <p>Nguyễn Quang Tân         070492187x</p>
-            <p>Nguyễn Minh Triều        036879257x</p>
-            <p>Nguyễn Ngọc Thiện        036410866x</p>
-            <strong>Support:</strong>   <a href="mailto:doantrunghieu472@gmail.com">doantrunghieu472@gmail.com</a><br />
-            <strong>Support:</strong>   <a href="mailto:nguyenminhtrieu010@gmail.com">nguyenminhtrieu010@gmail.com</a><br />
-            <strong>Support:</strong>   <a href="mailto:imagineworld14@gmail.com">imagineworld14@gmail.com</a><br />
-            <strong>Support:</strong>   <a href="mailto:tannguyen24102001@gmail.com">tannguyen24102001@gmail.com</a><br />
-        </address>
-    </div>
-    <div class="col-lg-3 " style="display:flex">
-        <img src="~/Content/Hinh_web/Contact.jpg" alt="Thumbnail" class="pull-left" />
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<link rel="stylesheet" type="text/css" href="./style.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/StyleDoAn.css">
+<script type="module" src="./index.js"></script>
+
+<style>
+    #map {
+        height: 200px;
+        width: 505px
+    }
+</style>
+
+<h3 style="padding-left: 5px; font-weight: bold; padding-bottom: 20px; text-align: center; text-decoration: underline #ffd800">Hệ thống Cửa hàng DinoGoose</h3>
+<div class="row" style="padding-bottom:10px">
+    <div class="col-md-12">
+        <div class="col-md-4" style="padding-left:20px">
+            <address style="padding-left:10px">
+                <p>Đoàn Trung Hiếu          085277556x</p>
+                <p>Nguyễn Quang Tân         070492187x</p>
+                <p>Nguyễn Minh Triều        036879257x</p>
+                <p>Nguyễn Ngọc Thiện        036410866x</p>
+                <strong>Support:</strong>   <a href="mailto:doantrunghieu472@gmail.com">doantrunghieu472@gmail.com</a><br />
+                <strong>Support:</strong>   <a href="mailto:nguyenminhtrieu010@gmail.com">nguyenminhtrieu010@gmail.com</a><br />
+                <strong>Support:</strong>   <a href="mailto:imagineworld14@gmail.com">imagineworld14@gmail.com</a><br />
+                <strong>Support:</strong>   <a href="mailto:tannguyen24102001@gmail.com">tannguyen24102001@gmail.com</a><br />
+            </address>
+        </div>
+        <div class="col-md-3" style="display:flex">
+            <img src="~/Content/Hinh_web/Contact.jpg" alt="Thumbnail" class="pull-left" />
+        </div>
+        <div class="col-md-5" style="padding-left: 95px">
+            <div id="map"></div>
+            <script>
+                var map;
+                function initMap() {
+                    const hcm = { lat: 10.823099, lng: 106.629662 };
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 4,
+                        center: hcm,
+                    });
+                    const marker = new google.maps.Marker({
+                        position: hcm,
+                        map: map,
+                    });
+                }
+                window.initMap = initMap;
+            </script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5grwobRhSdE_g50IW9McHQ8_cas50OSY&callback=initMap"></script>
+        </div>
     </div>
 </div>
+
+
+
+
+
 
 
 

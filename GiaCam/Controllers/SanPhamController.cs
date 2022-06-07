@@ -35,6 +35,44 @@ namespace GiaCam.Controllers
             var sp = from s in data.SanPhams where s.MaNCC == id select s;
             return View(sp);
         }
+        [HttpGet]
+        public ActionResult TimSP()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult TimSP(FormCollection collection)
+        {
+            var tensp = collection["tenSP"];
+            if (string.IsNullOrEmpty(tensp))
+            {
+                ViewData["Loi1"] = "Phải nhập tên sản phẩm!";
+            }
+            else
+            {
+                List<SanPham> list = data.SanPhams.ToList();
+                int masp = 0;
+                foreach(var item in list)
+                {
+                    if (item.TenSP.ToLower().Contains(tensp.ToLower()))
+                    {
+                        masp = item.MaSP;
+                        ViewBag.ThongBao = "Đã tìm thấy sản phẩm!";
+                        return RedirectToAction("SanPhamDaTim", "SanPham", new {ma = masp});
+                    }
+                    else
+                    {
+                        ViewBag.ThongBao = "Không tìm thấy sản phẩm!";
+                    }    
+                }      
+            }
+            return this.TimSP();
+        }
+        public ActionResult SanPhamDaTim(int ma)
+        {
+            var sp = from s in data.SanPhams where s.MaSP == ma select s;
+            return View(sp);
+        }
 
         public ActionResult Detail(int? id)
         {
@@ -44,6 +82,7 @@ namespace GiaCam.Controllers
             return View(sp.Single());
         }
 
+        
         // GET: SanPham
         public ActionResult Index()
         {

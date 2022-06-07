@@ -29,7 +29,7 @@
                     <td>@item.sTenSP</td>
                     <td><img src="~/Content/Hinh_web/@item.sAnhSP" alt="Thumbnal" style="width:100%" /></td>
                     @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @maSP = item.iMaSP }))
-                     {
+                    {
                         <td>
                             <input type="number" min="1" name="txtSoLuong" value="@item.iSoLuong" style="background-color: #ffd800; text-align: center" />
                         </td>
@@ -38,20 +38,26 @@
                         <td><a href="@Url.Action("Detail","SanPham", new {id = item.iMaSP})" style="color: blue"> Chi Tiết </a></td>
                         <td> @Html.ActionLink("Xóa", "XoaGioHang", new { @maSP = item.iMaSP })</td>
                         <td> <input type="submit" value="Cập Nhật" /></td>
-                     }
+                    }
                 </tr>
             }
             <tr style="text-align:right; font-weight:bold; color:crimson">
                 <td colspan="4">Tổng số lượng: @ViewBag.TongSoLuong</td>
                 <td colspan="5">Tổng tiền: @String.Format("{0:0,0}", ViewBag.TongTien)VND</td>
             </tr>
-            <tr style="text-align:right; font-weight:bold; color:darkred">
+            <tr style="text-align:left; font-weight:bold; color:darkred">
                 <td colspan="9">
                     @Html.ActionLink("Xóa Tất Cả Khỏi Giỏ Hàng", "XoaTatCaGioHang")
                 </td>
             </tr>
+            <tr style="text-align:right; font-weight:bold; color:darkorange">
+                <td colspan="9" align="center">
+                    @Html.ActionLink("Đặt Hàng", "DatHang", "GioHang")
+                </td>
+            </tr>
         </table>
     </div>
+    
     <div class="col-lg-3 ">
         <img src="~/Content/Hinh_web/GioHang.jpg" alt="Thumbnail" class="pull-left" style="height:180px" />
     </div>

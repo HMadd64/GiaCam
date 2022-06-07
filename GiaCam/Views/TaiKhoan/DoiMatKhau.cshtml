@@ -1,50 +1,49 @@
 ﻿
 @{
-    ViewBag.Title = "DangNhap";
+    ViewBag.Title = "DoiMatKhau";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
 <link rel="stylesheet" type="text/css" href="~/Content/StyleDoAn.css">
-<div class="row" style="padding-bottom:10px">
-    <h3 style="text-align:center; font-weight:bold ;text-decoration:underline #ffd800; padding-bottom: 10px">Đăng Nhập</h3>
-    <h4 style="color:red; text-align:center">@ViewBag.ThongBao</h4>
+<div class="row" style="padding-bottom: 10px">
+    <h3 style="text-align:center; font-weight:bold ;text-decoration:underline #ffd800; padding-bottom: 10px">Đổi mật khẩu</h3>
     <div class="col-lg-6" style="padding-left:20px">
         <table align="center" class="pull-right">
             @using (Html.BeginForm())
             {
                 @Html.ValidationSummary(true)
                 <tr style="height:40px">
-                    <td style="text-align:right">Tên đăng nhập: </td>
+                    <td style="text-align:right">Mật khẩu cũ: </td>
                     <td>
-                        @Html.TextBox("tenDN")
+                        @Html.Password("matKhauCu")
                         @ViewData["Loi1"]
                     </td>
                 </tr>
                 <tr style="height:40px">
-                    <td style="text-align:right">Mật khẩu: </td>
+                    <td style="text-align:right">Mật khẩu mới: </td>
                     <td>
                         @Html.Password("matKhau")
                         @ViewData["Loi2"]
                     </td>
                 </tr>
                 <tr style="height:40px">
-                    <td></td>
+                    <td style="text-align:right">Nhập lại mật khẩu mới: </td>
                     <td>
-                        <input type="submit" value="Đăng Nhập" />|
-                        @Html.ActionLink("Đăng ký", "DangKy", new { @class = "btn btn-default" })
+                        @Html.Password("matKhauNhapLai")
+                        @ViewData["Loi3"]
                     </td>
                 </tr>
                 <tr style="height:40px">
                     <td></td>
                     <td>
-                        @Html.ActionLink("Quên Mật Khẩu", "QuenMatKhau", new { @class = "btn btn-default" })
+                        <input type="submit" value="Xác nhận" />
                     </td>
                 </tr>
             }
         </table>
     </div>
     <div class="col-lg-3 " style="display:flex">
-        <img src="~/Content/Hinh_web/welcome.jpg" alt="Thumbnail" class="pull-left"/>
+        <img src="~/Content/Hinh_web/matKhau.jpg" alt="Thumbnail" class="pull-left" />
     </div>
 </div>
 

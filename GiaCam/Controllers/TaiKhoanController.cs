@@ -26,19 +26,19 @@ namespace GiaCam.Controllers
             var dienthoai = collection["sdt"];
             var dc = collection["diaChi"];
             var ngaysinh = string.Format("{0:MM/dd/yyyy}", collection["ngaySinh"]);
-            if (String.IsNullOrEmpty(hoten))
+            if (string.IsNullOrEmpty(hoten))
             {
                 ViewData["Loi1"] = "Họ tên khách hàng không dược trống!";
             }
-            if (String.IsNullOrEmpty(tendn))
+            if (string.IsNullOrEmpty(tendn))
             {
                 ViewData["Loi2"] = "Hãy nhập tên tài khoản!";
             }
-            if (String.IsNullOrEmpty(matkhau))
+            if (string.IsNullOrEmpty(matkhau))
             {
                 ViewData["Loi3"] = "Hãy nhập mật khẩu!";
             }
-            if (String.IsNullOrEmpty(matkhaunhaplai))
+            if (string.IsNullOrEmpty(matkhaunhaplai))
             {
                 ViewData["Loi4"] = "Phải nhập lại mật khẩu!";
             }
@@ -49,7 +49,7 @@ namespace GiaCam.Controllers
                     ViewData["Loi4"] = "Mật khẩu nhập lại không đúng!";
                 }
             }
-            if (String.IsNullOrEmpty(dienthoai))
+            if (string.IsNullOrEmpty(dienthoai))
             {
                 ViewData["Loi6"] = "Hãy nhập số điện thoại!";
             }
@@ -63,6 +63,10 @@ namespace GiaCam.Controllers
             if (String.IsNullOrEmpty(email))
             {
                 ViewData["Loi5"] = "Hãy nhập email!";
+                if(email.Contains("@") != true)
+                {
+                    ViewData["Loi5"] = "Email không hợp lệ!";
+                }
             }
             else
             {
@@ -84,11 +88,17 @@ namespace GiaCam.Controllers
         [HttpGet]
         public ActionResult DangNhap()
         {
+            var onl = Session["TaiKhoan"];
+            if (onl != null)
+            {
+                return RedirectToAction("ManageTaiKhoan");
+            }    
             return View();
         }
         [HttpPost]
         public ActionResult DangNhap(FormCollection collection)
         {
+
             var tendn = collection["tenDN"];
             var matkhau = collection["matKhau"];
             if (string.IsNullOrEmpty(tendn))
@@ -99,7 +109,7 @@ namespace GiaCam.Controllers
             {
                 if (string.IsNullOrEmpty(matkhau))
                 {
-                    ViewData["Loi1"] = "Phải nhập tên mật khẩu!";
+                    ViewData["Loi2"] = "Phải nhập mật khẩu!";
                 }
                 else
                 {
@@ -108,7 +118,8 @@ namespace GiaCam.Controllers
                     {
                         ViewBag.ThongBao = "Chúc mừng đăng nhập thành công!";
                         Session["TaiKhoan"] = kh;
-                        return RedirectToAction("Index", "GiaCam");
+                        Session["TenDangNhap"] = tendn;
+                        return RedirectToAction("Index", "SanPham");
                     }
                     else
                     {
@@ -117,6 +128,112 @@ namespace GiaCam.Controllers
                 }
             }
             return View();
+        }
+        [HttpGet]
+        public ActionResult QuenMatKhau()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult QuenMatKhau(FormCollection collection)
+        {
+            var tendn = collection["tenDN"];
+            if (string.IsNullOrEmpty(tendn))
+            {
+                ViewData["Loi1"] = "Phải nhập tên đăng nhập!";
+            }
+            else
+            {
+                KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.TaiKhoan == tendn);
+                if (kh != null)
+                {
+                    ViewBag.ThongBao = "Mật khẩu của bạn là: "+ kh.MatKhau;
+                    return View();
+                }
+                else
+                {
+                    ViewBag.ThongBao = "Tên đăng nhập không đúng hoặc không tồn tại!";
+                }
+                
+            }
+            return View();
+        }
+
+        public ActionResult ManageTaiKhoan()
+        {
+            var ten = Session["TenDangNhap"];
+            KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.TaiKhoan == ten);
+            return View(kh);
+        }
+        [HttpGet]
+        public ActionResult DoiMatKhau()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult DoiMatKhau(FormCollection collection)
+        {
+            var matkhaucu = collection["matKhauCu"];
+            var matkhau = collection["matKhau"];
+            var matkhaunhaplai = collection["matKhauNhapLai"];
+            List<KhachHang> list = db.KhachHangs.ToList();
+            if (string.IsNullOrEmpty(matkhaucu))
+            {
+                ViewData["Loi1"] = "Phải nhập mật khẩu cũ!";
+            }
+            else
+            {
+                foreach(var item in list)
+                {
+                    if(!matkhaucu.Equals(item.MatKhau))
+                    {
+                        ViewData["Loi1"] = "Không tồn tại mật khẩu này!";
+                    }
+                }
+            }
+            if (string.IsNullOrEmpty(matkhau))
+            {
+                ViewData["Loi2"] = "Hãy nhập mật khẩu!";
+            }
+            else
+            {
+                if (matkhau.Equals(matkhaucu))
+                {
+                    ViewData["Loi2"] = "Đây là mật khẩu hiện tại!";
+                    return View();
+                } 
+            }
+            if (string.IsNullOrEmpty(matkhaunhaplai))
+            {
+                ViewData["Loi3"] = "Phải nhập lại mật khẩu!";
+            }
+            else
+            {
+                if (matkhaunhaplai != matkhau)
+                {
+                    ViewData["Loi3"] = "Mật khẩu nhập lại không đúng!";
+                }
+                else
+                {
+                    foreach (var item in list)
+                    {
+                        if (matkhaucu.Equals(item.MatKhau))
+                        {
+                            item.MatKhau = matkhau;
+                            ViewBag.ThongBao = "Đổi mật khẩu thành công!!!";
+                            db.SubmitChanges();
+                            return RedirectToAction("ManageTaiKhoan", "TaiKhoan");
+                        }
+                    }
+                }    
+            }
+            return View();
+        }
+        public ActionResult DangXuat()
+        {
+            Session["TaiKhoan"] = null;
+            Session["TenDangNhap"] = null;
+            return RedirectToAction("DangNhap");
         }
         // GET: TaiKhoan
         public ActionResult Index()

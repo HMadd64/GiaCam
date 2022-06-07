@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" type="text/css" href="~/Content/StyleDoAn.css">
 <div class="row" style="padding-bottom: 10px">
-    <h3 style="text-align:center; font-weight:bold ;text-decoration:underline #ffd800">Đăng Ký Thành Viên</h3>
+    <h3 style="text-align:center; font-weight:bold ;text-decoration:underline #ffd800; padding-bottom: 10px">Đăng Ký Thành Viên</h3>
     <div class="col-lg-6" style="padding-left:20px">
         <table align="center" class="pull-right">
             @using (Html.BeginForm())
@@ -29,7 +29,7 @@
                 <tr style="height:40px">
                     <td style="text-align:right">Mật khẩu: </td>
                     <td>
-                        @Html.TextBox("matKhau")
+                        @Html.Password("matKhau")
                         @ViewData["Loi3"]
                     </td>
                 </tr>
