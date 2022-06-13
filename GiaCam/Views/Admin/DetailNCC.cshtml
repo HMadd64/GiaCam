@@ -1,0 +1,50 @@
+﻿@model GiaCam.Models.NhaCungCap
+
+@{
+    ViewBag.Title = "DetailNCC";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="padding-top: 65px">Chi tiết nhà cung cấp</h2>
+
+<div>
+    <h4>NhaCungCap</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã nhà cung cấp:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNCC)
+        </dd>
+        <dt>
+            Tên nhà cung cấp:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNCC)
+        </dd>
+
+        <dt>
+            Địa chỉ:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            Số điện thoại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditNCC", new { id = Model.MaNCC }) |
+    @Html.ActionLink("Quay lại", "NhaCungCAp")
+</p>

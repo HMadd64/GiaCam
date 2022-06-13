@@ -1,0 +1,40 @@
+﻿@model IEnumerable<GiaCam.Models.LoaiSanPham>
+
+@{
+    ViewBag.Title = "LoaiSanPham";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="padding-top: 65px">Quản lý loại sản phẩm</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "CreateLoai")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã loại
+        </th>
+        <th>
+            Tên loại
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenLoai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditLoai", new { id = item.MaLoai }) |
+            @Html.ActionLink("Details", "DetailLoai", new { id = item.MaLoai }) |
+            @Html.ActionLink("Delete", "DeleteLoai", new { id = item.MaLoai })
+        </td>
+    </tr>
+}
+
+</table>

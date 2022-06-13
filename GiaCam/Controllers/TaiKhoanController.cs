@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GiaCam.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace GiaCam.Controllers
 {
@@ -113,10 +115,17 @@ namespace GiaCam.Controllers
                 }
                 else
                 {
+                    TaiKhoanQuanLy ql = db.TaiKhoanQuanLies.SingleOrDefault(n => n.TenTK == tendn && n.MatKhau == matkhau);
+                    if (ql != null)
+                    {
+                        Session["TaiKhoan"] = ql;
+                        Session["TenDangNhap"] = tendn;
+                        return RedirectToAction("SanPham", "Admin");
+                    }
+
                     KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.TaiKhoan == tendn && n.MatKhau == matkhau);
                     if(kh != null)
                     {
-                        ViewBag.ThongBao = "Chúc mừng đăng nhập thành công!";
                         Session["TaiKhoan"] = kh;
                         Session["TenDangNhap"] = tendn;
                         return RedirectToAction("Index", "SanPham");
@@ -235,6 +244,35 @@ namespace GiaCam.Controllers
             Session["TenDangNhap"] = null;
             return RedirectToAction("DangNhap");
         }
+
+        private List<HoaDon> LayDSHD(int count)
+        {
+            var ten = Session["TenDangNhap"];
+            int makh = db.KhachHangs.SingleOrDefault(m => m.TaiKhoan == ten).MaKH;
+            var hoaDon = from hd in db.HoaDons where hd.MaKH == makh select hd;
+            return hoaDon.Take(count).ToList();
+        }
+
+        public ActionResult HoaDon(int? page)
+        {
+            int pageSize = 3;
+            int pageNum = (page ?? 1);
+
+            var DSHD = LayDSHD(15);
+            return PartialView(DSHD.ToPagedList(pageNum, pageSize));    
+        }
+        public ActionResult CTHD(int? id)
+        {
+            var onl = Session["TaiKhoan"];
+            if (onl != null)
+            {
+                var cthd = from ct in db.CTHDs where ct.MaHD == id select ct;
+                List<CTHD> list = cthd.ToList();
+                return View(list);
+            }
+            return RedirectToAction("DangNhap");
+        }
+
         // GET: TaiKhoan
         public ActionResult Index()
         {

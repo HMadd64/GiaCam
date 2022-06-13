@@ -1,0 +1,25 @@
+﻿@using GiaCam.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<HoaDon>
+
+
+<h3 style="text-align: center; font-weight:bold ">Hóa đơn</h3>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("CTHD", "TaiKhoan", new {id = item.MaHD})" class="list-group-item">
+            <strong>Mã hóa đơn:</strong>@item.MaHD
+        </a>
+        <p style="padding-left:10px"><strong>Ngày mua:</strong>@item.NgayMua.Day/@item.NgayMua.Month/@item.NgayMua.Year</p>
+        <p style="padding-left:10px"><strong>Ngày giao:</strong>@item.NgayGiaoHang.Value.Day/@item.NgayGiaoHang.Value.Month/@item.NgayGiaoHang.Value.Year</p>
+        <p style="padding-left:10px"><strong>Tổng tiền:</strong>@item.ThanhTien VND</p>
+        <p style="padding-left:10px"><strong>Tình trạng:</strong>@item.TinhTrangGiao</p>
+    }
+    <div class="row" style="text-align: center; padding-top:10px">
+        <div class="MenuTrang" style="display: inline">
+            @Html.PagedListPager(Model, page => Url.Action("CTHD", new { page = page }))
+        </div>
+    </div>
+</div>
+
+

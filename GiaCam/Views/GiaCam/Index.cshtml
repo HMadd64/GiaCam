@@ -1,4 +1,7 @@
-﻿@model IEnumerable<GiaCam.Models.SanPham>
+﻿@using GiaCam.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SanPham>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -11,10 +14,11 @@
         <div id="row">
             <div id="col-2">
                 <h1>Tất cả là cho trải nghiệm của bạn!<br>Mua gia cầm thời đại 4.0</h1>
-                <p><strong>
-                    Tất cả những gì bạn cần làm là sử dụng điện thoại và đặt hàng.
-                    <br>Được phục vụ các bạn là vinh dự của chúng tôi !
-                    </strong>  
+                <p>
+                    <strong>
+                        Tất cả những gì bạn cần làm là sử dụng điện thoại và đặt hàng.
+                        <br>Được phục vụ các bạn là vinh dự của chúng tôi !
+                    </strong>
                 </p>
             </div>
             <div id="col-2">
@@ -24,7 +28,7 @@
     </div>
 </div>
 
-<h2 style="text-align: center; text-decoration: underline #ffd800">Sản phẩm nổi bật</h2>
+<h2 style="text-align: center; text-decoration: underline #ffd800; font-weight: bold">Sản phẩm nổi bật</h2>
 <div class="row" style="padding: 5px 5px">
     @foreach (var sp in Model)
     {
@@ -53,5 +57,11 @@
         </div>
     }
 </div>
+<div class="row" style="text-align: center; padding-top:10px">
+    <div class="MenuTrang" style="display: inline">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+</div>
+
 
 

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<GiaCam.Models.NhaCungCap>
+
+@{
+    ViewBag.Title = "NhaCungCap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="padding-top: 65px">Quản lý nhà cung cấp</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "CreateNCC")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <strong>Mã nhà cung cấp</strong>
+        </th>
+        <th>
+            <strong>Tên nhà cung cấp</strong>
+        </th>
+        <th>
+            <strong>Địa chỉ</strong>
+        </th>
+        <th>
+            <strong>Số điện thoại</strong>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditNCC", new { id = item.MaNCC }) |
+            @Html.ActionLink("Details", "DetailNCC", new { id = item.MaNCC }) |
+            @Html.ActionLink("Delete", "DeleteNCC", new { id = item.MaNCC })
+        </td>
+    </tr>
+}
+</table>

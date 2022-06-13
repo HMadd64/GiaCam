@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GiaCam.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace GiaCam.Controllers
 {
@@ -19,10 +21,6 @@ namespace GiaCam.Controllers
         {
             var nhaCC = from ncc in data.NhaCungCaps select ncc;
             return PartialView(nhaCC);
-        }
-        private List<SanPham> LayDSSP()
-        {
-            return data.SanPhams.ToList();
         }
 
         public ActionResult SPTheoLoai(int? id)
@@ -82,12 +80,19 @@ namespace GiaCam.Controllers
             return View(sp.Single());
         }
 
-        
-        // GET: SanPham
-        public ActionResult Index()
+        private List<SanPham> LayDSSP(int count)
         {
-            var DSSP = LayDSSP();
-            return View(DSSP);
+            return data.SanPhams.Take(count).ToList();
+        }
+
+        // GET: SanPham
+        public ActionResult Index(int? page)
+        {
+            int pageSize = 6;
+            int pageNum = (page ?? 1);
+
+            var DSSP = LayDSSP(15);
+            return View(DSSP.ToPagedList(pageNum, pageSize));
         }
     }
 }

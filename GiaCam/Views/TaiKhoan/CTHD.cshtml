@@ -1,0 +1,30 @@
+﻿@model IEnumerable<GiaCam.Models.CTHD>
+@{
+    ViewBag.Title = "CTHD";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/StyleDoAn.css">
+
+
+<div class="row" style="padding: 5px 5px">    
+    <div class="col-md-3" style="padding-left:45px">
+        @Html.Action("HoaDon", "TaiKhoan")
+    </div>
+    <div class="col-md-8" style="float:right; padding-right:150px">
+        <h2 style="text-align: center; font-weight:bold ">Danh sách sản phẩm đã mua</h2>
+        @foreach (var ct in Model)
+        {
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-left" style="padding-bottom: 5px; padding-top:10px">
+                <div class="panel panel-heading">
+                    <strong>Mã sản phẩm: </strong>
+                    <strong>@ct.MaSP</strong>
+                </div>
+                <div class="panel panel-body">
+                    <p><strong>Số lượng: </strong>@ct.SoLuong</p>
+                    <p><strong>Giá: </strong>@ct.DonGia VND</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,4 +1,7 @@
-﻿@model IEnumerable<GiaCam.Models.SanPham>
+﻿@using GiaCam.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SanPham>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -40,6 +43,11 @@
                 </div>
             </div>
         }
-    </div> 
+    </div>
+</div>
+<div class="row" style="text-align: center; padding-top:10px">
+    <div class="MenuTrang" style="display: inline">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
 </div>
 

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GiaCam.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace GiaCam.Controllers
 {
@@ -21,10 +23,13 @@ namespace GiaCam.Controllers
         }
 
         // GET: GiaCam
-        public ActionResult Index()
+        public ActionResult Index(int ? page)
         {
-            var SPMoi = LaySPMoi(3);
-            return View(SPMoi);
+            int pageSize = 3;
+            int pageNum = (page ?? 1);
+
+            var SPMoi = LaySPMoi(15);
+            return View(SPMoi.ToPagedList(pageNum,pageSize));
         }
     }
 }
