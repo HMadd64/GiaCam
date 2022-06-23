@@ -17,6 +17,7 @@ namespace GiaCam.Models
         public double dThanhTien
         {
             get { return dDonGia * iSoLuong; }
+
         }
 
         public GioHang(int maSP)
