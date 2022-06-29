@@ -1,94 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.75, 10.75" name="dbGiaCam">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.75" name="dbGiaCam">
   <DataContextMoniker Name="/dbGiaCamDataContext" />
   <nestedChildShapes>
-    <classShape Id="f88c4ea7-2fa8-4125-bb2d-3235f9c6a56d" absoluteBounds="6.25, 1.5, 2, 1.7708968098958333">
+    <classShape Id="0cacf326-c868-48c6-85db-7af943644959" absoluteBounds="6.25, 1.5, 2, 1.7708968098958333">
       <DataClassMoniker Name="/dbGiaCamDataContext/CTHD" />
       <nestedChildShapes>
-        <elementListCompartment Id="22f28171-6da9-4a6f-9e53-9c263f3ddcd9" absoluteBounds="6.265, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6c73f82a-c2fa-41c3-ab54-be7f408191a5" absoluteBounds="6.265, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="fbee5df8-182a-40c1-ba04-9fa6197b92c8" absoluteBounds="10.5, 4.5, 2, 1.5785953776041666">
+    <classShape Id="92eb0dd6-7599-4c2b-8009-1604f018b9e3" absoluteBounds="3.75, 4.75, 2, 1.5785953776041666">
       <DataClassMoniker Name="/dbGiaCamDataContext/GopY" />
       <nestedChildShapes>
-        <elementListCompartment Id="9c635cf6-c895-406a-9a92-07336ce4155a" absoluteBounds="10.515, 4.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7a7c578c-699a-4465-9a85-439517e484b2" absoluteBounds="3.765, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="79639190-834d-405d-9ae1-d8e5ebb7f604" absoluteBounds="3.5, 8.375, 2, 1.9631982421874987">
+    <classShape Id="ac70f8e6-0c2a-4dfa-9f69-41deb8914faa" absoluteBounds="3.5, 8.375, 2, 1.9631982421874987">
       <DataClassMoniker Name="/dbGiaCamDataContext/HoaDon" />
       <nestedChildShapes>
-        <elementListCompartment Id="889cdce2-969b-47cd-b11f-4762bdfc9b2a" absoluteBounds="3.515, 8.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fb721469-a1d8-45c0-ac04-7b8ccfff9766" absoluteBounds="3.515, 8.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f4de6595-a04c-4d78-9159-db362abb3ef4" absoluteBounds="0.75, 8.125, 2, 2.3478011067708344">
+    <classShape Id="f7e83ae2-6e3b-4e7f-aadf-78c259e88123" absoluteBounds="0.75, 8.125, 2, 2.3478011067708344">
       <DataClassMoniker Name="/dbGiaCamDataContext/KhachHang" />
       <nestedChildShapes>
-        <elementListCompartment Id="8f08e21e-56f0-43f2-9e28-47527d0d7e3a" absoluteBounds="0.765, 8.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="db8e848b-20ed-4896-a09b-b7938c4bb58c" absoluteBounds="0.765, 8.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="01c6d750-6cea-4cd1-9489-be227d314925" absoluteBounds="0.75, 1.75, 2, 1.1939925130208335">
+    <classShape Id="5dbacf6c-ef28-417b-9218-193e7bbec978" absoluteBounds="0.75, 1.75, 2, 1.1939925130208335">
       <DataClassMoniker Name="/dbGiaCamDataContext/LoaiSanPham" />
       <nestedChildShapes>
-        <elementListCompartment Id="ae73198f-01d3-46b4-b902-c2ebb1ba1345" absoluteBounds="0.765, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1b24ca6c-2e50-47f2-9f35-3b2f9112bb93" absoluteBounds="0.765, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="32a231c5-5233-46bb-8953-b2529b7ac61b" absoluteBounds="6.75, 4.75, 2, 2.5401025390625005">
-      <DataClassMoniker Name="/dbGiaCamDataContext/NhanVien" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4d3d71d3-5a42-45fc-bda9-b5b337adf8bb" absoluteBounds="6.765, 5.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="6b96014a-8c51-4ba1-9392-52e61032ee95" absoluteBounds="0.75, 5.5, 2, 1.5785953776041666">
+    <classShape Id="f3c94feb-e2e5-4871-890e-4057a9eb22e6" absoluteBounds="0.75, 5.5, 2, 1.5785953776041666">
       <DataClassMoniker Name="/dbGiaCamDataContext/NhaCungCap" />
       <nestedChildShapes>
-        <elementListCompartment Id="2a52b227-8406-4a03-be08-f043a6173b2c" absoluteBounds="0.765, 5.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7e876ea9-f0f3-4781-b623-f3f5d1b5ab88" absoluteBounds="0.765, 5.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="76b5267b-44c6-4a39-b512-87a331f60fd8" absoluteBounds="3.5, 1, 2, 2.7324039713541666">
+    <classShape Id="da2c9d3f-63ab-436d-a1f8-1dc18530fdc4" absoluteBounds="6.75, 4.75, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/dbGiaCamDataContext/NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="577da908-6c4d-4a66-8370-894b898485c8" absoluteBounds="6.765, 5.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9966c2b8-5b42-492a-8073-05d668be237d" absoluteBounds="3.5, 1, 2, 2.7324039713541666">
       <DataClassMoniker Name="/dbGiaCamDataContext/SanPham" />
       <nestedChildShapes>
-        <elementListCompartment Id="14fc695a-0c08-4722-ba50-33cb4097a516" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fd9f2ee5-9b35-410f-ba82-085d08f6a860" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0c6c1318-cb52-4a3c-bce9-95615264ed6d" absoluteBounds="8.75, 0.75, 2, 1.3862939453125003">
+    <classShape Id="b394e60b-3a23-4daa-ba48-e7eea2eddcd7" absoluteBounds="8.75, 0.75, 2, 1.3862939453125003">
       <DataClassMoniker Name="/dbGiaCamDataContext/TaiKhoanQuanLy" />
       <nestedChildShapes>
-        <elementListCompartment Id="0b8d2c1e-8d41-44c8-ac00-586543c224ff" absoluteBounds="8.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c02bc058-06df-4d50-915d-5e1dadfa3cf1" absoluteBounds="8.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(5.5 : 9.35659912109375); (6.46875 : 9.35659912109375); (6.46875 : 3.27089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbGiaCamDataContext/HoaDon/HoaDon_CTHD" />
       <nodes>
-        <classShapeMoniker Id="79639190-834d-405d-9ae1-d8e5ebb7f604" />
-        <classShapeMoniker Id="f88c4ea7-2fa8-4125-bb2d-3235f9c6a56d" />
+        <classShapeMoniker Id="ac70f8e6-0c2a-4dfa-9f69-41deb8914faa" />
+        <classShapeMoniker Id="0cacf326-c868-48c6-85db-7af943644959" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 9.35659912109375); (3.5 : 9.35659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbGiaCamDataContext/KhachHang/KhachHang_HoaDon" />
       <nodes>
-        <classShapeMoniker Id="f4de6595-a04c-4d78-9159-db362abb3ef4" />
-        <classShapeMoniker Id="79639190-834d-405d-9ae1-d8e5ebb7f604" />
+        <classShapeMoniker Id="f7e83ae2-6e3b-4e7f-aadf-78c259e88123" />
+        <classShapeMoniker Id="ac70f8e6-0c2a-4dfa-9f69-41deb8914faa" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 2.38544840494792); (6.25 : 2.38544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbGiaCamDataContext/SanPham/SanPham_CTHD" />
       <nodes>
-        <classShapeMoniker Id="76b5267b-44c6-4a39-b512-87a331f60fd8" />
-        <classShapeMoniker Id="f88c4ea7-2fa8-4125-bb2d-3235f9c6a56d" />
+        <classShapeMoniker Id="9966c2b8-5b42-492a-8073-05d668be237d" />
+        <classShapeMoniker Id="0cacf326-c868-48c6-85db-7af943644959" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 2.34699625651042); (3.5 : 2.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbGiaCamDataContext/LoaiSanPham/LoaiSanPham_SanPham" />
       <nodes>
-        <classShapeMoniker Id="01c6d750-6cea-4cd1-9489-be227d314925" />
-        <classShapeMoniker Id="76b5267b-44c6-4a39-b512-87a331f60fd8" />
+        <classShapeMoniker Id="5dbacf6c-ef28-417b-9218-193e7bbec978" />
+        <classShapeMoniker Id="9966c2b8-5b42-492a-8073-05d668be237d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.28929768880208); (4.5 : 6.28929768880208); (4.5 : 3.73240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.73484537760417); (3.59375 : 6.73484537760417); (3.59375 : 3.73240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbGiaCamDataContext/NhaCungCap/NhaCungCap_SanPham" />
       <nodes>
-        <classShapeMoniker Id="6b96014a-8c51-4ba1-9392-52e61032ee95" />
-        <classShapeMoniker Id="76b5267b-44c6-4a39-b512-87a331f60fd8" />
+        <classShapeMoniker Id="f3c94feb-e2e5-4871-890e-4057a9eb22e6" />
+        <classShapeMoniker Id="9966c2b8-5b42-492a-8073-05d668be237d" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

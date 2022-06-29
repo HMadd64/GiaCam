@@ -30,9 +30,9 @@
             @Html.DisplayFor(modelItem => item.TenLoai)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditLoai", new { id = item.MaLoai }) |
-            @Html.ActionLink("Details", "DetailLoai", new { id = item.MaLoai }) |
-            @Html.ActionLink("Delete", "DeleteLoai", new { id = item.MaLoai })
+            @Html.ActionLink("Sửa", "EditLoai", new { id = item.MaLoai }) |
+            @Html.ActionLink("Chi tiết", "DetailLoai", new { id = item.MaLoai }) |
+            @Html.ActionLink("Xóa", "DeleteLoai", new { id = item.MaLoai })
         </td>
     </tr>
 }

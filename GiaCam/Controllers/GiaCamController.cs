@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using GiaCam.Models;
 using PagedList;
 using PagedList.Mvc;
-
+ 
 namespace GiaCam.Controllers
 {
     public class GiaCamController : Controller
