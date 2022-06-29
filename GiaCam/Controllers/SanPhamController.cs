@@ -48,6 +48,7 @@ namespace GiaCam.Controllers
             }
             else
             {
+
                 List<SanPham> list = data.SanPhams.ToList();
                 int masp = 0;
                 foreach(var item in list)
@@ -88,9 +89,9 @@ namespace GiaCam.Controllers
         // GET: SanPham
         public ActionResult Index(int? page)
         {
+
             int pageSize = 6;
             int pageNum = (page ?? 1);
-
             var DSSP = LayDSSP(15);
             return View(DSSP.ToPagedList(pageNum, pageSize));
         }

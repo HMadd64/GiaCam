@@ -137,6 +137,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MaHoa.cs" />
     <Compile Include="Models\dbGiaCam.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

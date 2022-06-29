@@ -1,5 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DoAnFull" Class="dbGiaCamDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=ACERASPIRE7\SQLEXPRESS;Initial Catalog=DoAnFull;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DoAnFullConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-2BRAE1RU\SQLEXPRESS;Initial Catalog=DoAnFull;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DoAnFullConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="MaNV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ChucVu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoNgayLam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Luong" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.CTHD" Member="CTHDs">
     <Type Name="CTHD">
       <Column Name="MaCTHD" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -49,19 +62,6 @@
       <Column Name="MaLoai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="LoaiSanPham_SanPham" Member="SanPhams" ThisKey="MaLoai" OtherKey="MaLoai" Type="SanPham" />
-    </Type>
-  </Table>
-  <Table Name="dbo.NhanVien" Member="NhanViens">
-    <Type Name="NhanVien">
-      <Column Name="MaNV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ChucVu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SDT" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SoNgayLam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Luong" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.NhaCungCap" Member="NhaCungCaps">

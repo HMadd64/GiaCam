@@ -74,7 +74,7 @@ namespace GiaCam.Controllers
             {
                 kh.TenKH = hoten;
                 kh.TaiKhoan = tendn;
-                kh.MatKhau = matkhau;
+                kh.MatKhau = MaHoa.GetMD5(matkhaunhaplai);
                 kh.Email = email;
                 kh.SDT = dienthoai;
                 kh.DiaChi = dc;
@@ -102,7 +102,7 @@ namespace GiaCam.Controllers
         {
 
             var tendn = collection["tenDN"];
-            var matkhau = collection["matKhau"];
+            var matkhau = MaHoa.GetMD5(collection["matKhau"]);
             if (string.IsNullOrEmpty(tendn))
             {
                 ViewData["Loi1"] = "Phải nhập tên đăng nhập!";
